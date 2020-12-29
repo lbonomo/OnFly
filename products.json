@@ -1,0 +1,106 @@
+{
+  "products": [
+    {
+      "id": "7798201235408-3",
+      "stock": 2,
+      "regular_price": 200,
+      "sale_price": null
+    },
+    {
+      "id": "7798201235408-2",
+      "stock": 3,
+      "regular_price": 150,
+      "sale_price": null
+    },
+    {
+      "id": "7798201235408-1",
+      "stock": 4,
+      "regular_price": 100,
+      "sale_price": null
+    },
+    {
+      "id": "3351500980086",
+      "stock": 6,
+      "regular_price": 105,
+      "sale_price": 80.769231
+    },
+    {
+      "id": "3351500001590",
+      "stock": 6,
+      "regular_price": 104,
+      "sale_price": 80
+    },
+    {
+      "id": "3351500004911",
+      "stock": 7,
+      "regular_price": 103,
+      "sale_price": 79.230769
+    },
+    {
+      "id": "3351500002122",
+      "stock": 6,
+      "regular_price": 102,
+      "sale_price": 78.461538
+    },
+    {
+      "id": "3351500002696-0",
+      "stock": 7,
+      "regular_price": 300,
+      "sale_price": null
+    },
+    {
+      "id": "3351500002696",
+      "stock": 7,
+      "regular_price": 108,
+      "sale_price": 83.076923
+    },
+    {
+      "id": "3351500002702",
+      "stock": 7,
+      "regular_price": 107,
+      "sale_price": 82.307692
+    },
+    {
+      "id": "3351500002703",
+      "stock": 6,
+      "regular_price": 106,
+      "sale_price": 81.538462
+    },
+    {
+      "id": "74170454284-0",
+      "stock": 7,
+      "regular_price": 150,
+      "sale_price": null
+    },
+    {
+      "id": "74170454093",
+      "stock": 7,
+      "regular_price": 114,
+      "sale_price": 87.692308
+    },
+    {
+      "id": "74170454284",
+      "stock": 7,
+      "regular_price": 113,
+      "sale_price": 86.923077
+    },
+    {
+      "id": "8011607294350",
+      "stock": 7,
+      "regular_price": 111,
+      "sale_price": 85.384615
+    },
+    {
+      "stock": 5,
+      "regular_price": 350,
+      "sale_price": null,
+      "id": "7798125437148"
+    },
+    {
+      "id": "30122604",
+      "stock": 7,
+      "regular_price": 109,
+      "sale_price": 83.846154
+    }
+  ]
+}
