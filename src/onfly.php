@@ -53,26 +53,38 @@ function onfly_woocommerce_before_single_product() {
  */
 function query_product() {
 	global $product;
-	$sku = $product->get_sku();
+	$slug = $product->get_slug();
 	// Objener y comparar la fecha de la ultima actalizacion.
 	// $product->get_date_modified() es un objeto WC_DateTime
 	// con ->getTimestamp lo paso a un entero.
 	$last_update = $product->get_date_modified()->getTimestamp();
 	$ttl         = 1; // En horas.
-	// $ref         = time() - ( $ttl * 3600 );
-	$ref         = time() - ( 10 ); // Para prueba solo un minuto
+//    $ref         = time() - ( $ttl * 3600 );
+	$ref         = time() - ( 1 ); // Para prueba solo un minuto
 
 	if ( $last_update <= $ref ) {
 		// Si la ultima actualizacion es menor a la referencia, consulta el API.
+		
+	// Datos de configuración y seguridad
+		
+	$endpoint = 'http://myurl';
+	$username = 'user';
+	$password = 'password';
 
-		$jsonserver = 'http://10.178.109.55:3000';
-
+	$body_out = [
+    	'post_id'  => $slug,
+	];
+ 
+	$response = wp_remote_post( $endpoint, array(
+    	'body' => $body_out,
+    	'headers' => array(
+        'Authorization' => 'Basic ' . base64_encode( $username . ':' . $password ),),) );
+		
 		// add_filter( 'https_local_ssl_verify', '__return_false' );
 		// add_filter( 'https_ssl_verify', '__return_false' );
 		// add_filter( 'block_local_requests', '__return_false' );
 		// https://developer.wordpress.org/reference/functions/wp_remote_get/ .
 
-		$response = wp_remote_get( "$jsonserver/products/$sku" );
 
 		if ( is_array( $response ) && ! is_wp_error( $response ) ) {
 			// Body es un string. Convertir en diccionario.
@@ -80,7 +92,7 @@ function query_product() {
 			update_product( $product, $body );
 		};
 
-		// Si el precio esta "desactualizado" y el API no respondes, ocultar el precio.
+		// Si el precio esta "desactualizado" y el API no responde, ocultar el precio.
 		if ( is_wp_error( $response ) ) {
 			hidden_price();
 		};
@@ -88,12 +100,13 @@ function query_product() {
 	}
 }
 
+
 /**
  * Oculto el precio del producto.
  */
 function hidden_price() {
 	echo '<style>div.onfly-alert { padding: 1rem; margin: 1rem; border: 1px red solid; text-align: center; }</style>';
-	echo "<div class='onfly-alert'>No se puedo obtener el precio del producto</div>";
+	echo "<div class='onfly-alert'>No se pudo obtener el precio del producto</div>";
 
 	// Elimino el agregar al carrito cuando no se pudo actualizar el precio.
 	remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
@@ -115,22 +128,20 @@ function hidden_price() {
 }
 
 /**
- * Actualiza el productos.
+ * Actualiza el producto.
  *
  * @param object $wc_product Datos del producto.
  * @param array  $json_data Datos del producto.
  */
 function update_product( $wc_product, $json_data ) {
 
-	$date_modified = $wc_product->get_date_modified();
-	$time_zone     = $date_modified->getTimezone();
-	$now           = new DateTime();
-	$now->setTimezone( $time_zone );
-
 	$wc_product->set_price( $json_data['regular_price'] );
 	$wc_product->set_regular_price( $json_data['regular_price'] );
 	$wc_product->set_sale_price( $json_data['sale_price'] );
-	// $wc_product->set_stock( $json_data['stock'] );
+	
+	$wc_product->set_short_description( $json_data['short_description'] ); // No se actualiza la vista si la página está en caché, 
+	                                                                       // vaciando la caché sí muestra la descripción actualizada.
+	
 	wc_update_product_stock( $wc_product->id, $json_data['stock'] );
 	$wc_product->save();
 }
