@@ -4,103 +4,120 @@
       "id": "7798201235408-3",
       "stock": 2,
       "regular_price": 200,
-      "sale_price": null
+      "sale_price": null,
+      "short_description": null
     },
     {
       "id": "7798201235408-2",
       "stock": 3,
       "regular_price": 150,
-      "sale_price": null
+      "sale_price": null,
+      "short_description": null
     },
     {
       "id": "7798201235408-1",
       "stock": 4,
       "regular_price": 100,
-      "sale_price": null
+      "sale_price": null,
+      "short_description": null
     },
     {
       "id": "3351500980086",
       "stock": 6,
       "regular_price": 105,
-      "sale_price": 80.769231
+      "sale_price": 80.769231,
+      "short_description": "Azzaro Homme EDT Vap 200ML"
     },
     {
       "id": "3351500001590",
       "stock": 6,
       "regular_price": 104,
-      "sale_price": 80
+      "sale_price": 80,
+      "short_description": "Azzaro Madeimoselle EDT 30ML"
     },
     {
       "id": "3351500004911",
       "stock": 7,
       "regular_price": 103,
-      "sale_price": 79.230769
+      "sale_price": 79.230769,
+      "short_description": "Azzaro Solarissimo Marettimo EDT 75ML"
     },
     {
       "id": "3351500002122",
       "stock": 6,
       "regular_price": 102,
-      "sale_price": 78.461538
+      "sale_price": 78.461538,
+      "short_description": "Azzaro Solarissimo Levanzo EDT 75ML"
     },
     {
       "id": "3351500002696-0",
       "stock": 7,
       "regular_price": 300,
-      "sale_price": null
+      "sale_price": null,
+      "short_description": "Azzaro Wanted EDT"
     },
     {
       "id": "3351500002696",
       "stock": 7,
       "regular_price": 108,
-      "sale_price": 83.076923
+      "sale_price": 83.076923,
+      "short_description": "Azzaro Wanted EDT - 50"
     },
     {
       "id": "3351500002702",
       "stock": 7,
       "regular_price": 107,
-      "sale_price": 82.307692
+      "sale_price": 82.307692,
+      "short_description": "Azzaro Wanted EDT - 100"
     },
     {
       "id": "3351500002703",
       "stock": 6,
       "regular_price": 106,
-      "sale_price": 81.538462
+      "sale_price": 81.538462,
+      "short_description": "Azzaro Wanted EDT - 150"
     },
     {
       "id": "74170454284-0",
       "stock": 7,
       "regular_price": 150,
-      "sale_price": null
+      "sale_price": null,
+      "short_description": "Sally Hansen Insta-Dri Nail"
     },
     {
       "id": "74170454093",
       "stock": 7,
       "regular_price": 114,
-      "sale_price": 87.692308
+      "sale_price": 87.692308,
+      "short_description": "Sally Hansen Insta-Dri Nail - Rapid Red 373"
     },
     {
       "id": "74170454284",
       "stock": 7,
       "regular_price": 113,
-      "sale_price": 86.923077
+      "sale_price": 86.923077,
+      "short_description": "Sally Hansen Insta-Dri Nail - Silver Stalion 563"
     },
     {
       "id": "8011607294350",
       "stock": 7,
       "regular_price": 111,
-      "sale_price": 85.384615
+      "sale_price": 85.384615,
+      "short_description": "Pupa Summer In L.A. Blush Me"
     },
     {
-      "stock": 5,
-      "regular_price": 350,
+      "id": "7798125437148",
+      "stock": 40,
+      "regular_price": 155,
       "sale_price": null,
-      "id": "7798125437148"
+      "short_description": "Arqueador de pestañas Fascino Plata 20"
     },
     {
       "id": "30122604",
       "stock": 7,
       "regular_price": 109,
-      "sale_price": 83.846154
+      "sale_price": 83.846154,
+      "short_description": "Rimmel - Esmalte Super Gel 029 Ice Lolly"
     }
   ]
 }
